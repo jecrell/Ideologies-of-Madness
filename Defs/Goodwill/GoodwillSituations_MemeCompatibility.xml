@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GoodwillSituationDef>
+    <defName>ROM_TouchedByMadness_TouchedByMadness</defName>
+    <label>agreement of madness</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>ROM_TouchedByMadness</meme>
+    <otherMeme>ROM_TouchedByMadness</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>ROM_Cannibal_TouchedByMadness</defName>
+    <label>cannibal vs touched by madness</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Cannibal</meme>
+    <otherMeme>ROM_TouchedByMadness</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+</Defs>

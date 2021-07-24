@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Cosmic Horrors -->
+
+ <MemeDef ParentName="StructureOriginBase">
+    <defName>ROM_Structure_CosmicHorrors</defName>
+    <label>Cosmic Horrors</label>
+    <description>The ideoligion is convinced that the true forces that guide the cosmos are unknowable and terrifying, and worst of all, uncaring of human life. Whether the adherents of this ideoligion attempt to appease, hide from, or oppose the Things That Dwell Beyond, central to this belief system is the insignificance of mankind in the larger universe.</description>
+    <iconPath>ROM_CosmicHorrors</iconPath>
+    <deityCount><min>1</min><max>6</max></deityCount>
+    <allowSymbolsFromDeity>false</allowSymbolsFromDeity>
+    <symbolPackOverride>true</symbolPackOverride>
+    <worshipRoomLabel>temple</worshipRoomLabel>
+    <groupDef>ROM_Mythos</groupDef>
+    <generalRules>
+      <rulesStrings>
+        <li>r_ideoName(p=99)->[globalAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[memeAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packIdeoName]</li>
+        <li>memeLeaderNoun->keeper</li>
+        <li>memeLeaderNoun->herald</li>
+        <li>memeLeaderNoun->archbishop</li>
+        <li>memeLeaderNoun-></li>
+        <li>memeLeaderAdjective->mad</li>
+        <li>memeLeaderAdjective->eldritch</li>
+        <li>memeLeaderAdjective->blood</li>
+        <li>memeLeaderAdjective->Old One's</li>
+        <li>memeMoralist->priest</li>
+        <li>memeMoralist->doomsayer</li>
+      </rulesStrings>
+    </generalRules>
+   <descriptionMaker>
+     <patterns>
+       <li><def>TheistMyth</def></li>
+       <li><def>TheistFounder</def></li>
+     </patterns>
+     <constants>
+       <li><key>structure_theist</key><value>true</value></li>
+       <!-- <li><key>structure_originChristian</key><value>true</value></li> -->
+     </constants>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_CosmicHorrors)        ->[deity0_name] was birthed at the center of all the universe, and [deity0_possessive] dream brought forth the flesh, sea, and land. </li>
+          <li>episode(uses=1,tag=meme_CosmicHorrors)  ->It is said that when [deity0_name] stops dreaming, our existence will disappear in the blink of an eye, and the only way to slow [deity0_possessive] awakening is by making great sacrifices to appease the slumbering Old One.</li>
+          <!-- theist founder -->
+          <li>intro(tag=meme_CosmicHorrors)           ->[place_summary] [place_name] fell through time and space. The [deity0_type] [deity0_pronoun] toyed with the minds of mortals, driving them to madness.</li>
+          <li>conflict(tag=meme_CosmicHorrors)        ->A [foeLeader] tried desperately to save the [memberNamePlural] from their madness. With each scribbled paper journal shredded to bits by [foeLeader], a dozen more were scribed.</li>
+          <li>founderJoin(tag=meme_CosmicHorrors)     ->One special [place_job] named [founderName] found an artifact that burrowed deep in [founderName_possessive] thoughts. Through [founder_possessive]'s growing insanity, [founder_pronoun] connected directly with [deity0_name], and learned the unspeakable truth of the universe. [memberNamePlural] followed in [founder_possessive] footsteps.</li>
+          <li>victory(tag=meme_CosmicHorrors)         ->[founderName] brought a thousand captives in front of the [place_powerCenter]. [memberNamePlural] extinguished the lives of thousands in sacrifice, blood to feed the will of [deity0_name]. As their final sacrifice, screaming for help in desperation calling out to old friends, [foeLeader] was not spared the sacrificial blade of [deity0_name].</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_CosmicHorrors)           ->At the founding of our movement, its creator [founderName] narrowly escaped an encounter with an otherworldly being that burned its horrors into [founder_possessive] mind birthing dreams and potent nightmares. [founderName] awoke one day to a body transformed into an avatar of madness.</li>
+          <li>setup(tag=meme_CosmicHorrors)           ->Our movement's founder, [founderName], gained [founder_possessive] first followers by leading them deep into the caverns below the deepest parts of the planet. There they observed an indescribable sleeping horror spawned from the old gods.</li>
+          <li>story(uses=1,tag=meme_CosmicHorrors)    ->[founderName]'s followers demonstrated their unshakable resolve and devotion by making sacrifices so horrible they are beyond this storyteller to utter.</li>
+          <li>story(uses=1,tag=meme_CosmicHorrors)    ->[founderName]'s followers kept the heads of their enemies and offered up those remains as a sacrifice.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_CosmicHorrors)         ->We are nothing before the immensity of horrors beyond our fragile world. We can only control how quickly we pass from this world when the things beyond come to reap our souls. Blood must be paid:</li>
+          <li>lesson(tag=meme_CosmicHorrors)              ->you will never understand what I now know -- the truth of our insignificance in this universe.</li>
+          <li>lessonReinforcement(tag=meme_CosmicHorrors) ->I was blessed with ignorance; I know that everything will end and our best hope is to be the first to be annihilated. Iä! Iä! All hail [deity0_name]!</li>
+          <li>lessonReinforcement(tag=meme_CosmicHorrors) ->I understood then that every flower grows from a grave; sacrifices must be made. Iä! Iä! All bow to [deity0_name]!</li>
+          <!-- archist & animist
+          <li>archistBasis(tag=meme_CosmicHorrors)    ->The birth of the archotechs was the greatest pain the universe had ever known.</li>
+          <li>archistBasis(tag=meme_CosmicHorrors)    ->Archotechs have always been fueled by the psychic suffering of human beings.</li>
+          <li>archistFact(tag=meme_CosmicHorrors)     ->The great minds see and acknowledge when we demonstrate our devotion by inflicting pain on ourselves.</li>
+          <li>archistFact(tag=meme_CosmicHorrors)     ->Every now and then, those who suffer most deeply and nobly can connect with the archotechs inside their minds.</li>
+          <li>archistProphecy(tag=meme_CosmicHorrors) ->[inTheEnd], the archotechs will raise up all of humanity to a higher level of consciousness, but only those able to endure the greatest pain will survive.</li>
+          
+          <li>animistFact(tag=meme_CosmicHorrors)     ->Pain forces the mind to be present. In that way, pain is a way to connect with the spirit world.</li>
+          -->
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+   <symbolPacks>
+      <li><ideoName>Cult</ideoName><adjective>Cultist</adjective><member>Cultist</member><prefix>true</prefix></li>
+    </symbolPacks>
+    <fixedDeityNameTypes>
+      <li><name>Azathoth</name><type>Blind Idiot God</type></li>
+      <li><name>Abhoth</name><type>Source of Uncleanliness</type></li>
+      <li><name>Cxaxukluth</name><type>Offspring of Azathoth</type></li>
+      <li><name>Daoloth</name><type>Render of the Veils</type></li>
+      <li><name>Darkness</name><type>Nameless Mist</type></li>
+      <li><name>D'endrrah</name><type>World Eater</type></li>
+      <li><name>Ghroth</name><type>Nemesis</type></li>
+      <li><name>Noth-Yidik</name><type>Houndmaster of Tindalos</type></li>
+      <li><name>Nyarlathotep</name><type>Crawling Chaos</type></li>
+      <li><name>Tru'nembra</name><type>Flautist of Azathoth</type></li>
+      <li><name>Tulzscha</name><type>Green Flame</type></li>
+      <li><name>Yog-Sothoth</name><type>Key and the Gate</type></li>
+      <li><name>Vulthoom</name><type>Sleeper of Ravermos</type></li>
+    </fixedDeityNameTypes>
+    <thingStyleCategories>
+      <li>
+        <category>Morbid</category>
+        <priority>4</priority>
+      </li>
+    </thingStyleCategories>
+  </MemeDef>
+
+</Defs>

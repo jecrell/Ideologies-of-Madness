@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoIconDef>
+    <defName>ROM_CultsA</defName>
+    <iconPath>UI/Ideoligions/ROM_CultsA</iconPath>
+    <memes>
+      <li>ROM_Structure_CosmicHorrors</li>
+      <li>ROM_Structure_PrimordialHorrors</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </memes>
+  </IdeoIconDef> 
+  
+  <IdeoIconDef>
+    <defName>ROM_CultsB</defName>
+    <iconPath>UI/Ideoligions/ROM_CultsB</iconPath>
+    <memes>
+      <li>ROM_Structure_CosmicHorrors</li>
+      <li>ROM_Structure_PrimordialHorrors</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </memes>
+  </IdeoIconDef>   
+
+  <IdeoIconDef>
+    <defName>ROM_CultsC</defName>
+    <iconPath>UI/Ideoligions/ROM_CultsC</iconPath>
+    <memes>
+      <li>ROM_Structure_CosmicHorrors</li>
+      <li>ROM_Structure_PrimordialHorrors</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </memes>
+  </IdeoIconDef>   
+
+  <IdeoIconDef>
+    <defName>ROM_CultsD</defName>
+    <iconPath>UI/Ideoligions/ROM_CultsD</iconPath>
+    <memes>
+      <li>ROM_Structure_CosmicHorrors</li>
+      <li>ROM_Structure_PrimordialHorrors</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </memes>
+  </IdeoIconDef>   
+  
+  <IdeoIconDef>
+    <defName>ROM_CultsE</defName>
+    <iconPath>UI/Ideoligions/ROM_CultsE</iconPath>
+    <memes>
+      <li>ROM_Structure_CosmicHorrors</li>
+      <li>ROM_Structure_PrimordialHorrors</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </memes>
+  </IdeoIconDef> 
+  
+  <IdeoIconDef>
+    <defName>ROM_CultsF</defName>
+    <iconPath>UI/Ideoligions/ROM_CultsF</iconPath>
+    <memes>
+      <li>ROM_Structure_CosmicHorrors</li>
+      <li>ROM_Structure_PrimordialHorrors</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </memes>
+  </IdeoIconDef> 
+
+</Defs>

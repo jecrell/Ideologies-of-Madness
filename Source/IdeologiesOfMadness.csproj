@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- See also ..\Directory.Build.props, which contains common contents between all the csproj files -->
+  <PropertyGroup>
+    <RootNamespace>IdeologiesOfMadness</RootNamespace>
+    <AssemblyName>IdeologiesOfMadness</AssemblyName>
+    <Configurations>RW1.1;RW1.2;RW1.3</Configurations>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0.0</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RW1.3|AnyCPU'">
+    <OutputPath>..\1.3\Assemblies</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.3066" />
+  </ItemGroup>
+</Project>

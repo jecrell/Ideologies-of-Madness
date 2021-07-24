@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MemeGroupDef>
+    <defName>ROM_Mythos</defName>
+    <drawOffset>(0.1, 0)</drawOffset>
+  </MemeGroupDef>
+
+
+</Defs>

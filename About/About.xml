@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>jecrell.ideologies</packageId>
+  <name>Ideologies of Madness</name>
+  <author>Jecrell</author>
+  <url>https://discord.gg/AaVFA7V</url>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <description>0.0 (07-21-2021)
+Madness comes in many forms. Why not build a society with it?
+Welcome to the Ideologies of Madness.
+
+Version Number (MM-DD-YYYYY)
+===================
+Madness comes in many forms. Why not build a society with it?
+
+</description>
+</ModMetaData>

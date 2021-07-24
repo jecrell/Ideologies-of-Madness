@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HistoryEventDef>
+    <defName>ROM_SacrificedHuman</defName>
+    <label>performed human sacrifice</label>
+  </HistoryEventDef>
+
+  <IssueDef>
+    <defName>ROM_HumanSacrifice</defName>
+    <label>human sacrifice</label>
+    <allowMultiplePrecepts>false</allowMultiplePrecepts>
+    <iconPath>UI/issues/ROM_HumanSacrifice</iconPath>
+  </IssueDef>
+
+
+  <!-- =========== -->
+  <!-- Abhorrent -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_HumanSacrifice_Abhorrent</defName>
+    <issue>ROM_HumanSacrifice</issue>
+    <label>abhorrent</label>
+    <description>Sacrificing innocent human lives is the work of mad men.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Know_Abhorrent_Opinion</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <!-- You're doing it and it's wrong -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Abhorrent</defName>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>I performed human sacrifice</label>
+        <description>I carried out human sacrifice. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- You know someone in the colony did it. -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Know_Abhorrent</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>we performed human sacrifice</label>
+        <description>One of us sacrificed a living human being. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- Your opinion of them goes way down -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Know_Abhorrent_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>sacrificed human</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- =========== -->
+  <!-- Disapproved -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_HumanSacrifice_Disapproved</defName>
+    <issue>ROM_HumanSacrifice</issue>
+    <label>disapproved</label>
+    <description>Enough sacrifices have been made. We have no need to sacrifice more innocent lives.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Know_Disapproved_Opinion</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <!-- You're doing it and it's wrong -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Disapproved</defName>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>I performed human sacrifice</label>
+        <description>I had to perform human sacrifice. I believe such actions are wrong.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- You know someone in the colony did it. -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Know_Disapproved</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>we performed human sacrifice</label>
+        <description>One of us performed human sacrifice. I believe such actions are wrong.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- Your opinion of them goes way down -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Know_Disapproved_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>performed human sacrifice</label>
+        <baseOpinionOffset>-7</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- =========== -->
+  <!-- Acceptable -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_HumanSacrifice_Acceptable</defName>
+    <issue>ROM_HumanSacrifice</issue>
+    <label>acceptable</label>
+    <description>Every colony needs to make sacrifices now and then.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </associatedMemes>
+  </PreceptDef>
+
+  <!-- =========== -->
+  <!-- Preferred -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_HumanSacrifice_Preferred</defName>
+    <issue>ROM_HumanSacrifice</issue>
+    <label>preferred</label>
+    <description>Sacrifices are noble rituals and are a sacred way of life.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <comps>
+      <!-- Ritual sacrifice performed -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_Preferred</thought>
+      </li>
+
+      <!-- Want human meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ROM_NoRecentSacrificedHuman_Preferred</thought>
+        <description>No human sacrifice for 16 days</description>
+      </li>
+    </comps>
+  </PreceptDef>
+  <!-- This is pretty good actually -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_Preferred</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>performed human sacrifice</label>
+        <description>I performed human sacrifice. It makes me feel noble and strong.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- I want a human sacrifice -->
+  <ThoughtDef>
+    <defName>ROM_NoRecentSacrificedHuman_Preferred</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentHumanMeat</workerClass>
+    <stages>
+      <li>
+        <label>want human sacrifice</label>
+        <description>It's been too long since we carried out a human sacrifice. It feels wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+
+  <!-- ================= -->
+  <!-- Stringly Required -->
+  <!-- ================= -->
+
+  <PreceptDef>
+    <defName>ROM_HumanSacrifice_RequiredStrong</defName>
+    <issue>ROM_HumanSacrifice</issue>
+    <label>required (strong)</label>
+    <description>We cannot maintain our society without rituals of blood.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <comps>
+      <!-- Performed human sacrifice -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_RequiredStrong</thought>
+      </li>
+
+      <!-- Want human sacrifice -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ROM_NoRecentSacrificedHuman_RequiredStrong</thought>
+        <description>No human sacrifice for 16 days</description>
+      </li>
+
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_RequiredStrong</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>performed human sacrifice</label>
+        <description>We performed human sacrifice, as every real human should.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ROM_NoRecentSacrificedHuman_RequiredStrong</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentHumanMeat</workerClass>
+    <stages>
+      <li>
+        <label>want human sacrifice</label>
+        <description>It's been far too long since we performed a human sacrifice. We need to spill blood.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Absolutely required -->
+
+  <PreceptDef>
+    <defName>ROM_HumanSacrifice_RequiredInsane</defName>
+    <issue>ROM_HumanSacrifice</issue>
+    <label>required (insane)</label>
+    <description>Blood must be spilled. Let us make rivers from the veins of our sacrificial lambs. Man is made to be sacrificed.</description>
+    <impact>High</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <comps>
+      <!-- Performed human sacrifice -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedHuman</eventDef>
+        <thought>ROM_SacrificedHuman_RequiredInsane</thought>
+      </li>
+
+      <!-- Want human meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ROM_NoRecentSacrificedHuman_RequiredInsane</thought>
+        <description>No human sacrifice for 16 days</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <ThoughtDef>
+    <defName>ROM_SacrificedHuman_RequiredInsane</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>performed human sacrifice</label>
+        <description>We performed a human sacrifice! The world is right, and I am as I should be.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ROM_NoRecentSacrificedHuman_RequiredInsane</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentHumanMeat</workerClass>
+    <stages>
+      <li>
+        <label>want human sacrifice</label>
+        <description>Madness! It's been so long since we carried a human sacrifice. This is wrong!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

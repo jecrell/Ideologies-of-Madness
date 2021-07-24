@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ColorDef[defName="Red"]/memes</xpath>
+        <value>
+            <li>ROM_Structure_CosmicHorrors</li>
+            <li>ROM_Structure_PrimordialHorrors</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ColorDef[defName="Green"]/memes</xpath>
+        <value>
+            <li>ROM_Structure_CosmicHorrors</li>
+            <li>ROM_Structure_PrimordialHorrors</li>
+        </value>
+    </Operation>
+
+</Patch>

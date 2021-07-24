@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MemeDef>
+    <defName>ROM_TouchedByMadness</defName>
+    <label>Touched by Madness</label>
+    <description>We’ve seen the things that lurk beyond the stars, and our dreams are infested with dreadful, eldritch non-shapes.</description>
+    <iconPath>ROM_SacrificialCult</iconPath>
+    <groupDef>Misc</groupDef>
+    <impact>2</impact>
+    <renderOrder>80</renderOrder>
+    <consumableBuildings>
+      <li>Effigy</li>
+    </consumableBuildings>
+    <requireOne>
+      <li>
+        <li>Apostasy_Abhorrent</li>
+      </li>
+      <li>
+        <li>ROM_Proselytizing_Forbidden</li>
+      </li>
+    </requireOne>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->mad</li>
+        <li>memeAdjective->eldritch</li>
+        <li>memeAdjective->unspeakable</li>
+        <li>memeCreed->den</li>
+        <li>memeCreed->chamber</li>
+        <li>memeCreed->circle</li>
+        <li>memeHyphenPrefix->dream</li>
+        <li>memeHyphenPrefix->doom</li>
+        <li>memeConcept->sacrifice</li>
+        <li>memeConcept->forbidden knowledge</li>
+        <li>memeConcept->fear</li>
+        <li>memeConcept->madness</li>
+        <li>memeConcept->blood</li>
+        <li>memeLeaderNoun->inquisitor</li>
+        <li>memeLeaderNoun->archmagus</li>
+        <li>memeLeaderNoun->cardinal</li>
+        <li>memeLeaderNoun->avatar</li>
+        <li>memeLeaderNoun->warlock</li>
+        <li>memeLeaderNoun->sorcerer</li>
+        <li>memeMoralist->gatekeeper</li>
+        <li>memeMoralist->loremaster</li>
+        <li>memeMoralist->voidcaller</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_SecretiveCult)        ->[deity0_name] was birthed at the center of all the universe, and [deity0_possessive] dream brought forth the flesh, sea, and land. </li>
+          <li>episode(uses=1,tag=meme_SecretiveCult)  ->It is said that when [deity0_name] stops dreaming, our existence will disappear in the blink of an eye, and the only way to slow [deity0_possessive] awakening is by making great sacrifices to appease the slumbering Old One.</li>
+          <!-- theist founder -->
+          <li>intro(tag=meme_SecretiveCult)           ->[place_summary] [place_name] fell through time and space. The [deity0_type] [deity0_pronoun] toyed with the minds of mortals, driving them to madness.</li>
+          <li>conflict(tag=meme_SecretiveCult)        ->A [foeLeader] tried desperately to save the [memberNamePlural] from their madness. With each scribbled paper journal shredded to bits by [foeLeader], a dozen more were scribed.</li>
+          <li>founderJoin(tag=meme_SecretiveCult)     ->One special [place_job] named [founderName] found an artifact that burrowed deep in [founderName_possessive] thoughts. Through [founder_possessive]'s growing insanity, [founder_pronoun] connected directly with [deity0_name], and learned the unspeakable truth of the universe. [memberNamePlural] followed in [founder_possessive] footsteps.</li>
+          <li>victory(tag=meme_SecretiveCult)         ->[founderName] brought a thousand captives in front of the [place_powerCenter]. [memberNamePlural] extinguished the lives of thousands in sacrifice, blood to feed the will of [deity0_name]. As their final sacrifice, screaming for help in desperation calling out to old friends, [foeLeader] was not spared the sacrificial blade of [deity0_name].</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_SecretiveCult)           ->At the founding of our movement, its creator [founderName] narrowly escaped an encounter with an otherworldly being that burned its horrors into [founder_possessive] mind birthing dreams and potent nightmares. [founderName] awoke one day to a body transformed into an avatar of madness.</li>
+          <li>setup(tag=meme_SecretiveCult)           ->Our movement's founder, [founderName], gained [founder_possessive] first followers by leading them deep into the caverns below the deepest parts of the planet. There they observed an indescribable sleeping horror spawned from the old gods.</li>
+          <li>story(uses=1,tag=meme_SecretiveCult)    ->[founderName]'s followers demonstrated their unshakable resolve and devotion by making sacrifices so horrible they are beyond this storyteller to utter.</li>
+          <li>story(uses=1,tag=meme_SecretiveCult)    ->[founderName]'s followers kept the heads of their enemies and offered up those remains as a sacrifice.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_SecretiveCult)         ->We are nothing before the immensity of horrors beyond our fragile world. We can only control how quickly we pass from this world when the things beyond come to reap our souls. Blood must be paid:</li>
+          <li>lesson(tag=meme_SecretiveCult)              ->you will never understand what I now know -- the truth of our insignificance in this universe.</li>
+          <li>lessonReinforcement(tag=meme_SecretiveCult) ->I was blessed with ignorance; I know that everything will end and our best hope is to be the first to be annihilated. Iä! Iä! All hail [deity0_name]!</li>
+          <li>lessonReinforcement(tag=meme_SecretiveCult) ->I understood then that every flower grows from a grave; sacrifices must be made. Iä! Iä! All bow to [deity0_name]!</li>
+          <!-- archist & animist
+          <li>archistBasis(tag=meme_SecretiveCult)    ->The birth of the archotechs was the greatest pain the universe had ever known.</li>
+          <li>archistBasis(tag=meme_SecretiveCult)    ->Archotechs have always been fueled by the psychic suffering of human beings.</li>
+          <li>archistFact(tag=meme_SecretiveCult)     ->The great minds see and acknowledge when we demonstrate our devotion by inflicting pain on ourselves.</li>
+          <li>archistFact(tag=meme_SecretiveCult)     ->Every now and then, those who suffer most deeply and nobly can connect with the archotechs inside their minds.</li>
+          <li>archistProphecy(tag=meme_SecretiveCult) ->[inTheEnd], the archotechs will raise up all of humanity to a higher level of consciousness, but only those able to endure the greatest pain will survive.</li>
+          
+          <li>animistFact(tag=meme_SecretiveCult)     ->Pain forces the mind to be present. In that way, pain is a way to connect with the spirit world.</li>
+          -->
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <ideoName>Abyssism</ideoName>
+        <theme>abyss</theme>
+        <adjective>abyssal</adjective>
+        <member>abyssimite</member>
+      </li>
+      <li>
+        <ideoName>Apocalypse theory</ideoName>
+        <theme>apocalypse</theme>
+        <adjective>apocalyptic</adjective>
+        <member>doom sayer</member>
+      </li>
+      <li>
+        <ideoName>Nihilism</ideoName>
+        <theme>nihilism</theme>
+        <adjective>nihilistic</adjective>
+        <member>nihlist</member>
+      </li>
+      <li>
+        <ideoName>Occultism</ideoName>
+        <theme>occult</theme>
+        <adjective>occultist</adjective>
+        <member>cultist</member>
+      </li>
+    </symbolPacks>
+    <thingStyleCategories>
+      <li>
+        <category>Morbid</category>
+        <priority>1</priority>
+      </li>
+    </thingStyleCategories>
+    <ritualsToMake>1</ritualsToMake>
+    <replaceRitualsWithTags><li>CelebratedDate</li></replaceRitualsWithTags>
+    <replacementPatterns><li>SacrificePrisoner</li><li>SacrificeAnimal</li></replacementPatterns>
+    <requiredRituals>
+      <li>
+          <precept>Festival</precept>
+          <pattern>SacrificePrisoner</pattern>
+      </li>
+      <li>
+          <precept>Conversion</precept>
+          <pattern>Conversion</pattern>
+      </li>
+    </requiredRituals>
+    <addDesignators>
+      <li>SlabBed</li>
+      <li>SlabDoubleBed</li>
+    </addDesignators>
+    <agreeableTraits>
+      <li>Abrasive</li>
+      <li>Psychopath</li>
+      <li>CreepyBreathing</li>
+    </agreeableTraits>
+    <disagreeableTraits>
+      <li>Kind</li>
+    </disagreeableTraits>
+  </MemeDef>
+
+</Defs>

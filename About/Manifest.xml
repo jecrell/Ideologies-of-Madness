@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+  <identifier>IdeologiesOfMadness</identifier>
+  <version>0.0</version>
+  <dependencies />
+  <incompatibleWith />
+  <manifestUri>https://raw.githubusercontent.com/jecrell/JecsTools/master/About/Manifest.xml</manifestUri>
+  <downloadUri>https://github.com/jecrell/IdeologiesOfMadness/releases</downloadUri>
+</Manifest>

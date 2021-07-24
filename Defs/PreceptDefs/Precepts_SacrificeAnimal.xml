@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HistoryEventDef>
+    <defName>ROM_SacrificedAnimal</defName>
+    <label>performed animal sacrifice</label>
+  </HistoryEventDef>
+
+  <IssueDef>
+    <defName>ROM_AnimalSacrifice</defName>
+    <label>animal sacrifice</label>
+    <allowMultiplePrecepts>false</allowMultiplePrecepts>
+    <iconPath>UI/issues/ROM_AnimalSacrifice</iconPath>
+  </IssueDef>
+
+  <!-- =========== -->
+  <!-- Abhorrent -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_AnimalSacrifice_Abhorrent</defName>
+    <issue>ROM_AnimalSacrifice</issue>
+    <label>abhorrent</label>
+    <description>Sacrificing innocent animal lives is the work of mad men.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Know_Abhorrent_Opinion</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <!-- You're doing it and it's wrong -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Abhorrent</defName>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>I performed animal sacrifice</label>
+        <description>I carried out animal sacrifice. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- You know someone in the colony did it. -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Know_Abhorrent</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>we performed animal sacrifice</label>
+        <description>One of us sacrificed a living animal being. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- Your opinion of them goes way down -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Know_Abhorrent_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>sacrificed animal</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- =========== -->
+  <!-- Disapproved -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_AnimalSacrifice_Disapproved</defName>
+    <issue>ROM_AnimalSacrifice</issue>
+    <label>disapproved</label>
+    <description>Enough sacrifices have been made. We have no need to sacrifice more innocent lives.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Know_Disapproved_Opinion</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <!-- You're doing it and it's wrong -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Disapproved</defName>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>I performed animal sacrifice</label>
+        <description>I had to perform animal sacrifice. I believe such actions are wrong.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- You know someone in the colony did it. -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Know_Disapproved</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>we performed animal sacrifice</label>
+        <description>One of us performed animal sacrifice. I believe such actions are wrong.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- Your opinion of them goes way down -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Know_Disapproved_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>performed animal sacrifice</label>
+        <baseOpinionOffset>-7</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- =========== -->
+  <!-- Acceptable -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_AnimalSacrifice_Acceptable</defName>
+    <issue>ROM_AnimalSacrifice</issue>
+    <label>acceptable</label>
+    <description>Every colony needs to make sacrifices now and then.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+      <li>ROM_SecretiveCult</li>
+      <li>ROM_TouchedByMadness</li>
+    </associatedMemes>
+  </PreceptDef>
+
+  <!-- =========== -->
+  <!-- Preferred -->
+  <!-- =========== -->
+  <PreceptDef>
+    <defName>ROM_AnimalSacrifice_Preferred</defName>
+    <issue>ROM_AnimalSacrifice</issue>
+    <label>preferred</label>
+    <description>Sacrifices are noble rituals and are a sacred way of life.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <comps>
+      <!-- Ritual sacrifice performed -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_Preferred</thought>
+      </li>
+
+      <!-- Want animal meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ROM_NoRecentSacrificedAnimal_Preferred</thought>
+        <description>No animal sacrifice for 18 days</description>
+      </li>
+    </comps>
+  </PreceptDef>
+  <!-- This is pretty good actually -->
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_Preferred</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>performed animal sacrifice</label>
+        <description>I performed animal sacrifice. It makes me feel noble and strong.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- I want a animal sacrifice -->
+  <ThoughtDef>
+    <defName>ROM_NoRecentSacrificedAnimal_Preferred</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>IdeologiesOfMadness.ThoughtWorker_Precept_NoRecentAnimalSacrifice</workerClass>
+    <stages>
+      <li>
+        <label>want animal sacrifice</label>
+        <description>It's been too long since we carried out a animal sacrifice. It feels wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+
+  <!-- ================= -->
+  <!-- Strongly Required -->
+  <!-- ================= -->
+
+  <PreceptDef>
+    <defName>ROM_AnimalSacrifice_RequiredStrong</defName>
+    <issue>ROM_AnimalSacrifice</issue>
+    <label>required (strong)</label>
+    <description>We cannot maintain our society without rituals of blood.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <comps>
+      <!-- Performed animal sacrifice -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_RequiredStrong</thought>
+      </li>
+
+      <!-- Want animal sacrifice -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ROM_NoRecentSacrificedAnimal_RequiredStrong</thought>
+        <description>No animal sacrifice for 18 days</description>
+      </li>
+
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_RequiredStrong</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>performed animal sacrifice</label>
+        <description>We performed animal sacrifice, as every real animal should.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ROM_NoRecentSacrificedAnimal_RequiredStrong</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>IdeologiesOfMadness.ThoughtWorker_Precept_NoRecentAnimalSacrifice</workerClass>
+    <stages>
+      <li>
+        <label>want animal sacrifice</label>
+        <description>It's been far too long since we performed a animal sacrifice. We need to spill blood.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Absolutely required -->
+
+  <PreceptDef>
+    <defName>ROM_AnimalSacrifice_RequiredInsane</defName>
+    <issue>ROM_AnimalSacrifice</issue>
+    <label>required (insane)</label>
+    <description>Blood must be spilled. Let us make rivers from the veins of our sacrificial lambs. Man is made to be sacrificed.</description>
+    <impact>High</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <comps>
+      <!-- Performed animal sacrifice -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ROM_SacrificedAnimal</eventDef>
+        <thought>ROM_SacrificedAnimal_RequiredInsane</thought>
+      </li>
+
+      <!-- Want animal meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ROM_NoRecentSacrificedAnimal_RequiredInsane</thought>
+        <description>No animal sacrifice for 18 days</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <ThoughtDef>
+    <defName>ROM_SacrificedAnimal_RequiredInsane</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>performed animal sacrifice</label>
+        <description>We performed a animal sacrifice! The world is right, and I am as I should be.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ROM_NoRecentSacrificedAnimal_RequiredInsane</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>IdeologiesOfMadness.ThoughtWorker_Precept_NoRecentAnimalSacrifice</workerClass>
+    <stages>
+      <li>
+        <label>want animal sacrifice</label>
+        <description>Madness! It's been so long since we carried a animal sacrifice. This is wrong!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
